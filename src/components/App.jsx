@@ -1,7 +1,7 @@
 import './App.css'
 import React, { Component } from 'react';
 import Section from './Section/Section';
-import { nanoid } from 'nanoid'
+// import { nanoid } from 'nanoid'
 
 
 
