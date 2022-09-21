@@ -1,6 +1,7 @@
 import './App.css'
 import React, { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
+import Filter from './Filter/Filter';
 import { nanoid } from 'nanoid'
 
 
@@ -65,16 +66,16 @@ class App extends Component {
         <ContactForm onSubmit={ this.addContact} />
 
         <h2 className="counter__title">Contacts</h2>
-        {/* <Filter ... /> */}
+        <Filter value={this.state.filter} onChange={this.changeFilter } />
         {/* <ContactList ... /> */}
 
 
           
      
-          <label htmlFor="filter"> filter by name 
+          {/* <label htmlFor="filter"> filter by name 
             <input type="text" name="filter" value={this.state.filter} onChange={ this.changeFilter} />
           </label>
-          
+           */}
           <ul>
             {contactsRender.map(({ id, name, number}) => (
               <li key={id}>

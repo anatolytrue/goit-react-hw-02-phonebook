@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import css from './ContactForm.css'
-// import { nanoid } from "nanoid";
+import './ContactForm.css'
 
 class ContactForm extends Component{
     state = {
@@ -10,7 +9,6 @@ class ContactForm extends Component{
 
 
     handleChange = e => {
-    // const { name, id } = e.currentTarget;
 
     const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
@@ -18,7 +16,6 @@ class ContactForm extends Component{
 
     handleSubmit = e => {
     e.preventDefault();
-          // this.onSubmit(this.state.name)
     this.props.onSubmit(this.state);
     this.reset();
     }
@@ -33,8 +30,8 @@ class ContactForm extends Component{
         return (
             <form className="phonebook__form" onSubmit={this.handleSubmit}>
             <label className="phonebook__label" htmlFor={this.nameId}>
-              Name
-              <input
+            Name
+                <input
                 className='phonebook__input'
                 type="text"
                 name="name"
@@ -43,8 +40,8 @@ class ContactForm extends Component{
                 title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                 onChange={this.handleChange}
                 required
-              />
-              <input
+                />
+                <input
                 type="tel"
                 name='number'
                 value={this.state.number}
@@ -52,13 +49,13 @@ class ContactForm extends Component{
                 title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                 required
                 onChange={this.handleChange}
-              />
+                />
                 
-              <button
-                type='submit'
-                className='phonebook__btn-add'>
-                Add contact
-              </button>
+                <button
+                    type='submit'
+                    className='phonebook__btn-add'>
+                    Add contact
+                </button>
             </label>
             </form>
         )

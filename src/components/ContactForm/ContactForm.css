@@ -1,0 +1,28 @@
+.phonebook__form{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        border: 1px solid black;
+}
+
+.phonebook__label {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: flex-start;
+}
+
+.phonebook__input {
+    margin: 12px 0;
+}
+
+.phonebook__btn-add {
+    padding: 4px 8px;
+    border-style: none;
+    border-radius: 4px;
+    background-color: rgb(240, 166, 190);
+    min-width: 40px;
+    margin-top: 12px;
+}
