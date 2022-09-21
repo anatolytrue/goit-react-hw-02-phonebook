@@ -5,6 +5,7 @@
         align-items: center;
         padding: 20px;
         border: 1px solid black;
+        min-width: 350px;
 }
 
 .phonebook__label {
@@ -22,7 +23,8 @@
     padding: 4px 8px;
     border-style: none;
     border-radius: 4px;
-    background-color: rgb(240, 166, 190);
+    background-color:peru;
+    color: antiquewhite;
     min-width: 40px;
     margin-top: 12px;
 }

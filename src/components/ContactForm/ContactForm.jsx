@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
 import './ContactForm.css'
 
 class ContactForm extends Component{
@@ -7,6 +8,9 @@ class ContactForm extends Component{
         number: '',
     }
 
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired
+    }
 
     handleChange = e => {
 
@@ -25,8 +29,6 @@ class ContactForm extends Component{
     }
 
     render() {
-
-
         return (
             <form className="phonebook__form" onSubmit={this.handleSubmit}>
             <label className="phonebook__label" htmlFor={this.nameId}>
