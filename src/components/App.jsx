@@ -1,6 +1,6 @@
 import './App.css'
 import React, { Component } from 'react';
-import Section from './Section/Section';
+import ContactForm from './ContactForm/ContactForm';
 import { nanoid } from 'nanoid'
 
 
@@ -15,11 +15,9 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: ''
   };
 
-  nameId = nanoid();
+  // nameId = nanoid();
 
   changeFilter = e => {
         this.setState({ filter: e.currentTarget.value });
@@ -38,26 +36,13 @@ class App extends Component {
 
   
   
-  handleChange = e => {
-    // const { name, id } = e.currentTarget;
+  
 
-    const { name, value } = e.currentTarget;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit = e => {
-    e.preventDefault();
-          // this.onSubmit(this.state.name)
-    this.addContact();
-    this.setState({name: '', number: ''})
-
-  }
-
-    addContact = name => {
+  addContact = ({ name, number }) => {
         const contact = {
           id: nanoid(),
-          name: this.state.name,
-          number: this.state.number
+          name,
+          number,
         };
 
         this.setState(({contacts}) => ({
@@ -71,44 +56,21 @@ class App extends Component {
   
 
   render() {
-    const contactsRender = this.state.contacts;
+    const contactsRender = this.getVisibleContacts();
     
     return (
       <div className="phonebook">
-        <Section title="Phonebook">
-          <form className="phonebook__form" onSubmit={this.handleSubmit}>
-            <label className="phonebook__label" htmlFor={this.nameId}>
-              Name
-              <input
-                className='phonebook__input'
-                type="text"
-                name="name"
-                value={this.state.name}
-                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-                id={this.nameId}
-                onChange={this.handleChange}
-                required
-              />
-              <input
-                type="tel"
-                name='number'
-                value={this.state.number}
-                pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-                required
-                onChange={this.handleChange}
-              />
-                
-              <button
-                type='submit'
-                className='phonebook__btn-add'>
-                Add contact
-              </button>
-            </label>
-            </form>
-        </Section>
-        <Section title="Contacts">
+
+        <h1 className="counter__title">Phonebook</h1>
+        <ContactForm onSubmit={ this.addContact} />
+
+        <h2 className="counter__title">Contacts</h2>
+        {/* <Filter ... /> */}
+        {/* <ContactList ... /> */}
+
+
+          
+     
           <label htmlFor="filter"> filter by name 
             <input type="text" name="filter" value={this.state.filter} onChange={ this.changeFilter} />
           </label>
@@ -120,7 +82,7 @@ class App extends Component {
               </li>
             ))}
           </ul>
-        </Section>
+
         
       </div>
     );
