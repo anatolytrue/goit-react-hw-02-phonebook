@@ -1,4 +1,4 @@
-.phonebook__contact-list{
+.phonebookContactList{
     display: flex;
         flex-direction: column;
         justify-content: center;
@@ -9,13 +9,13 @@
         list-style:square;
 }
 
-.phonebook__contact-list-item{
+.phonebookContactListItem{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.phonebook__contact-list-btn{
+.phonebookContactListBtn{
     min-height: 16px;
     margin-left: 12px;
     background-color:peru;

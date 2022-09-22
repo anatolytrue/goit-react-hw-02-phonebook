@@ -1,29 +1,29 @@
-.phonebook__form{
+.phonebookForm {
     display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        border: 1px solid black;
-        min-width: 350px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid black;
+    min-width: 350px;
 }
 
-.phonebook__label {
+.phonebookLabel {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: flex-start;
 }
 
-.phonebook__input {
+.phonebookInput {
     margin: 12px 0;
 }
 
-.phonebook__btn-add {
+.phonebookBtnAdd {
     padding: 4px 8px;
     border-style: none;
     border-radius: 4px;
-    background-color:peru;
+    background-color: peru;
     color: antiquewhite;
     min-width: 40px;
     margin-top: 12px;

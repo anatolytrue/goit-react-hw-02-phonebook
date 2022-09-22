@@ -1,4 +1,4 @@
-import './App.css'
+import css from './App.module.css'
 import React, { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
@@ -50,7 +50,7 @@ class App extends Component {
   render() {
     const filteredContacts = this.getVisibleContacts()
     return (
-      <div className="phonebook">
+      <div className={css.phonebook}>
         <h1 className="counter__title">Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         

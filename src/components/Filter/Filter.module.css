@@ -1,8 +1,8 @@
-.filter__input{
+.filterInput {
     margin: 12px;
 }
 
-.phonebook__filter-label{
+.phonebookFilterLabel {
     display: flex;
     flex-direction: column;
     align-items: center;
